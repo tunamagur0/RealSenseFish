@@ -11,6 +11,8 @@ namespace Inputs.InputImpls
         private readonly ReactiveProperty<Vector3> _onTouch = new ReactiveProperty<Vector3>();
         public IReadOnlyReactiveProperty<Vector3> OnCreate => _onCreate;
         public IReadOnlyReactiveProperty<Vector3> OnTouch => _onTouch;
+
+        [SerializeField] private float sigma = 2.0f;
         protected void Start()
         {
             this.UpdateAsObservable()
@@ -22,6 +24,9 @@ namespace Inputs.InputImpls
                     var position = Input.mousePosition;
                     position.z = 10f;
                     var screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(position);
+
+                    //奥にランダムにずらす
+                    screenToWorldPointPosition += new Vector3(Random.value * sigma, 0, 0);
 
                     _onCreate.SetValueAndForceNotify(screenToWorldPointPosition);
                 });
@@ -36,7 +41,7 @@ namespace Inputs.InputImpls
                     position.z = 10f;
                     var screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(position);
 
-                    _onTouch.SetValueAndForceNotify(Input.mousePosition);
+                    _onTouch.SetValueAndForceNotify(screenToWorldPointPosition);
                 });
         }
     }
