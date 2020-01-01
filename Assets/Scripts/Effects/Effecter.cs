@@ -20,7 +20,7 @@ namespace Effects
 
         void Start()
         {
-            var inputEvent = GetComponent<IInputEventProvider>();
+            var inputEvent = GetComponent<ITouchEventProvider>();
 
             inputEvent.OnTouch.Subscribe(pos => CreateNotEnterArea(pos));
         }

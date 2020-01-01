@@ -13,7 +13,7 @@ namespace Managers
         [SerializeField] private GameObject _fishPrefab = default;
         void Start()
         {
-            var inputEvent = GetComponent<IInputEventProvider>();
+            var inputEvent = GetComponent<ICreateEventProvider>();
             var texture = Resources.Load("Textures/fish_texture") as Texture2D;
 
             inputEvent.OnCreate.Subscribe(pos => { CreateAnimal(AnimalType.Fish, texture, pos); });

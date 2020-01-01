@@ -5,9 +5,8 @@ using UniRx;
 
 namespace Inputs
 {
-    interface IInputEventProvider
+    interface ITouchEventProvider
     {
-        IReadOnlyReactiveProperty<Vector3> OnCreate { get; }
         IReadOnlyReactiveProperty<Vector3> OnTouch { get; }
     }
 }
