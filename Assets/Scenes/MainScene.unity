@@ -140,7 +140,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_Range: 100
   m_SpotAngle: 83.015976
   m_CookieSize: 10
@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 318087695}
   - component: {fileID: 318087696}
   - component: {fileID: 318087697}
+  - component: {fileID: 318087698}
   m_Layer: 0
   m_Name: AnimalGenerator
   m_TagString: Untagged
@@ -236,7 +237,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 318087694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520236ae3ea5e46f0b1b81406d754567, type: 3}
+  m_Script: {fileID: 11500000, guid: 682492d04a9eb4937b25729b2fb5cbb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &318087698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318087694}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7c913bd246049f09d73c0f29763977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sigma: 2
@@ -766,7 +779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504817375}
   - component: {fileID: 1504817376}
-  - component: {fileID: 1504817377}
+  - component: {fileID: 1504817378}
   m_Layer: 0
   m_Name: Effecter
   m_TagString: Untagged
@@ -803,7 +816,7 @@ MonoBehaviour:
   _notEnterPrefab: {fileID: 2536360162325286409, guid: 5c6f932dc3e104779aad5756181c9363,
     type: 3}
   _areaRadius: 3
---- !u!114 &1504817377
+--- !u!114 &1504817378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -812,10 +825,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1504817374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520236ae3ea5e46f0b1b81406d754567, type: 3}
+  m_Script: {fileID: 11500000, guid: a39152a420fe0427d8f130444882baf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sigma: 2
 --- !u!1 &1725539013
 GameObject:
   m_ObjectHideFlags: 0

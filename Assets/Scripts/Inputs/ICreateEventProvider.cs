@@ -7,6 +7,8 @@ namespace Inputs
 {
     interface ICreateEventProvider
     {
+        Texture2D texture { get; }
+
         IReadOnlyReactiveProperty<Vector3> OnCreate { get; }
     }
 }

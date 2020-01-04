@@ -16,16 +16,19 @@ namespace Managers
             var inputEvent = GetComponent<ICreateEventProvider>();
             var texture = Resources.Load("Textures/fish_texture") as Texture2D;
 
-            inputEvent.OnCreate.Subscribe(pos => { CreateAnimal(AnimalType.Fish, texture, pos); });
+            inputEvent.OnCreate.Subscribe(pos => { CreateAnimal(AnimalType.Fish, inputEvent.texture, pos); });
         }
 
-        private void CreateAnimal(AnimalType type, Texture2D texture, Vector3 posiiton)
+        private void CreateAnimal(AnimalType type, Texture2D texture, Vector3 position)
         {
+            Debug.Log(texture.ToString());
+            Debug.Log(type.ToString());
+            Debug.Log(position.ToString());
             switch (type)
             {
                 case AnimalType.Fish:
                     {
-                        var go = Instantiate(_fishPrefab, posiiton, Quaternion.identity);
+                        var go = Instantiate(_fishPrefab, position, Quaternion.identity);
                         var script = go.GetComponent<Animal>();
                         script.Init(texture);
                         break;

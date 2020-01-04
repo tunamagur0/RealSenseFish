@@ -6,6 +6,8 @@ namespace Inputs.InputImpls
 {
     public class MouseCreateProvider : MonoBehaviour, ICreateEventProvider
     {
+        private Texture2D _texture;
+        public Texture2D texture => _texture;
         private static MouseCreateProvider _instance;
         private readonly ReactiveProperty<Vector3> _onCreate = new ReactiveProperty<Vector3>();
         public IReadOnlyReactiveProperty<Vector3> OnCreate => _onCreate;
@@ -15,6 +17,8 @@ namespace Inputs.InputImpls
         {
             if (_instance == null)
             {
+                _texture = Resources.Load("Textures/fish_texture") as Texture2D;
+
                 _instance = this;
                 this.UpdateAsObservable()
                     .Select(_ => Input.GetMouseButton(0))

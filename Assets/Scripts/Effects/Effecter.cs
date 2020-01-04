@@ -27,7 +27,6 @@ namespace Effects
 
         private void CreateNotEnterArea(Vector3 position)
         {
-            Debug.Log(position);
             var go = Instantiate(_notEnterPrefab, position, Quaternion.identity);
             go.transform.localScale *= _areaRadius * 2;
             Destroy(go, _liveTime);
