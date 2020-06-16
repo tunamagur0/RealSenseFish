@@ -21,9 +21,6 @@ namespace Managers
 
         private void CreateAnimal(AnimalType type, Texture2D texture, Vector3 position)
         {
-            Debug.Log(texture.ToString());
-            Debug.Log(type.ToString());
-            Debug.Log(position.ToString());
             switch (type)
             {
                 case AnimalType.Fish:

@@ -18,6 +18,8 @@ namespace Inputs.InputImpls
         public Texture2D texture => _texture;
         private readonly ReactiveProperty<Vector3> _onCreate = new ReactiveProperty<Vector3>();
         public IReadOnlyReactiveProperty<Vector3> OnCreate => _onCreate;
+        [SerializeField] private float sigma = 2.0f;
+
 
         private readonly object lockObj = new object();
 
@@ -47,7 +49,7 @@ namespace Inputs.InputImpls
                     byte[] bytes = Convert.FromBase64String(msg);
                     _texture = new Texture2D(1024, 1024);
                     _texture.LoadImage(bytes);
-                    _onCreate.SetValueAndForceNotify(new Vector3(0, 0, 0));
+                    _onCreate.SetValueAndForceNotify(new Vector3(UnityEngine.Random.value * sigma, 0, 0));
                 }
                 catch (Exception e)
                 {
